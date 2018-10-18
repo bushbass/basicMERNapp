@@ -47,7 +47,8 @@ router.delete("/:id", (req, res) => {
   Chicken.findOneAndRemove({ _id: req.params.id }, (err, data) => {
     if (err) return console.log(err);
   });
-  res.redirect(303, "/api/chickens");
+  // res.redirect(303, "/api/chickens");
+  res.json(data);
 });
 
 module.exports = router;
